@@ -30,11 +30,11 @@ public class EditPaneManager : MonoBehaviour {
 			GameObject currentObject = blim.currentRaycastObject;
 			Transform rootTransform = currentObject.transform.root;
 			float distance = Vector3.Distance(rootTransform.position, lookCamera.transform.position);
-			if (Input.GetKeyDown(KeyCode.J)) {
-				distance -= 2.0f;
+			if (Input.GetKey(KeyCode.J) && distance > 1.5) {
+				distance -= 0.5f;
 			}
-			if (Input.GetKeyDown(KeyCode.K)) {
-				distance += 2.0f;
+			if (Input.GetKey(KeyCode.K)) {
+				distance += 0.5f;
 			}
 
 			rootTransform.position = (lookCamera.transform.position + lookCamera.transform.forward * distance);

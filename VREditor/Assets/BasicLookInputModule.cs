@@ -56,12 +56,12 @@ public class BasicLookInputModule : BaseInputModule {
 				}
 			}
 		}
-		if (eventSystem.currentSelectedGameObject && controlAxisName != null && controlAxisName != "") {
-			float newVal = Input.GetAxis (controlAxisName);
-			if (newVal > 0.01f || newVal < -0.01f) {
-				AxisEventData axisData = GetAxisEventData(newVal,0.0f,0.0f);
-				ExecuteEvents.Execute(eventSystem.currentSelectedGameObject, axisData, ExecuteEvents.moveHandler);
-			}
-		}
+//		if (eventSystem.currentSelectedGameObject && controlAxisName != null && controlAxisName != "") {
+//			float newVal = Input.GetAxis (controlAxisName);
+//			if (newVal > 0.01f || newVal < -0.01f) {
+//				AxisEventData axisData = GetAxisEventData(newVal,0.0f,0.0f);
+//				ExecuteEvents.Execute(eventSystem.currentSelectedGameObject, axisData, ExecuteEvents.moveHandler);
+//			}
+//		}
 	}   
 }

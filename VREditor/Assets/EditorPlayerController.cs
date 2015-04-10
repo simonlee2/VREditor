@@ -138,7 +138,7 @@ public class EditorPlayerController : MonoBehaviour
 	
 	protected virtual void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Tab)) {
+		if (comboPressed(KeyCode.LeftShift, KeyCode.Space)) {
 			this.HaltUpdateMovement = !this.HaltUpdateMovement;
 		}
 
@@ -444,6 +444,13 @@ public class EditorPlayerController : MonoBehaviour
 			euler.y = InitialYRotation;
 			transform.rotation = Quaternion.Euler(euler);
 		}
+	}
+
+	public bool comboPressed(KeyCode meta, KeyCode key) {
+		if (Input.GetKey (meta) && Input.GetKeyDown (key)) {
+			return true;
+		}
+		return false;
 	}
 }
 

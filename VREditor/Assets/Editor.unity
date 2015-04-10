@@ -1150,7 +1150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d481101dad2f46719d0172dfa2a527f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchBar: {fileID: 546677073}
+  launchBarField: {fileID: 546677073}
+  launchBarObject: {fileID: 468954619}
 --- !u!4 &1791828302
 Transform:
   m_ObjectHideFlags: 0

@@ -365,7 +365,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 468954619}
-  m_LocalRotation: {x: .0949770808, y: 0, z: 0, w: .995479465}
+  m_LocalRotation: {x: .301252902, y: 0, z: 0, w: .953544319}
   m_LocalPosition: {x: 0, y: 0, z: .319999993}
   m_LocalScale: {x: .00999999978, y: .00999999978, z: .596092582}
   m_Children:
@@ -1377,6 +1377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   submitButtonName: Fire1
   controlAxisName: Horizontal
+  currentRaycastObject: {fileID: 0}
 --- !u!1 &2084072307
 GameObject:
   m_ObjectHideFlags: 0

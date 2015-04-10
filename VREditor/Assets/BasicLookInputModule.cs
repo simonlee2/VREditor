@@ -8,6 +8,7 @@ public class BasicLookInputModule : BaseInputModule {
 	public const int kLookId = -3;
 	public string submitButtonName = "Fire1";
 	public string controlAxisName = "Horizontal";
+	public GameObject currentRaycastObject;
 	private PointerEventData lookData;
 	
 	// use screen midpoint as locked pointer location, enabling look location to be the "mouse"
@@ -41,6 +42,7 @@ public class BasicLookInputModule : BaseInputModule {
 		SendUpdateEventToSelectedObject();
 		PointerEventData lookData = GetLookPointerEventData();
 		// use built-in enter/exit highlight handler
+		currentRaycastObject = lookData.pointerCurrentRaycast.gameObject;
 		HandlePointerExitAndEnter(lookData,lookData.pointerCurrentRaycast.gameObject);
 		if (Input.GetButtonDown (submitButtonName)) {
 			eventSystem.SetSelectedGameObject(null);

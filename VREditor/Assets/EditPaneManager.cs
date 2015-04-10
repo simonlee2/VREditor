@@ -21,6 +21,25 @@ public class EditPaneManager : MonoBehaviour {
 			Vector3 pos = lookCamera.transform.position + lookCamera.transform.forward * 3;
 			Instantiate(Resources.Load("tile"), pos, new Quaternion());
 		}
+
+		if (Input.GetKey (KeyCode.LeftControl) && Input.GetKey(KeyCode.B)) {
+			// drag windows around
+			// find distance btwn look and window
+			GameObject eventSystem = GameObject.Find("EventSystem");
+			BasicLookInputModule blim = eventSystem.GetComponent<BasicLookInputModule>();
+			GameObject currentObject = blim.currentRaycastObject;
+			Transform rootTransform = currentObject.transform.root;
+			float distance = Vector3.Distance(rootTransform.position, lookCamera.transform.position);
+			if (Input.GetKeyDown(KeyCode.J)) {
+				distance -= 2.0f;
+			}
+			if (Input.GetKeyDown(KeyCode.K)) {
+				distance += 2.0f;
+			}
+
+			rootTransform.position = (lookCamera.transform.position + lookCamera.transform.forward * distance);
+			rootTransform.rotation = lookCamera.transform.rotation;
+		}
 	}
 
 	public bool comboPressed(KeyCode meta, KeyCode key) {

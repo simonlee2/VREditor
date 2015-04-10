@@ -11,7 +11,7 @@ public class HUDTracking : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 pos = trackingAnchor.transform.position + trackingAnchor.transform.forward * 3;
+		Vector3 pos = trackingAnchor.transform.position + trackingAnchor.transform.forward * 3 - trackingAnchor.transform.up * 2;
 		HUD.transform.position = pos;
 		HUD.transform.rotation = trackingAnchor.transform.rotation;
 	}
